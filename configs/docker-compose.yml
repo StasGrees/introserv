@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql
+    environment:
+      DB_SERVER_HOST: postgres
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbixpass
+    ports:
+      - "10051:10051"
+
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-pgsql
+    environment:
+      DB_SERVER_HOST: postgres
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbixpass
+      ZBX_SERVER_HOST: zabbix-server
+    ports:
+      - "8080:8080"
+
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbixpass
+      POSTGRES_DB: zabbix
