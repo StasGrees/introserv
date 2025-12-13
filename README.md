@@ -156,3 +156,21 @@ rsync -a /opt/backups/дата_нужного_бекапа/ /var/lib/docker/volu
 Разворачивание технической части: 2часа 30минут
 Описание, добавление тригеров, мелочи: 3часа
 ```
+
+### Почтовые уведомления Zabbix
+```markdown
+Problem: High CPU Utilization (>80%)
+Входящие
+sgffdgsfghgfd@gmail.com
+    
+02:23 (26 минут назад)
+    
+    
+кому: мне
+Problem started at 00:23:24 on 2025.12.13
+Problem name: High CPU Utilization (>80%)
+Host: Zabbix server
+Severity: High
+Operational data: 18.43 %
+Original problem ID: 49
+```
